@@ -25,7 +25,25 @@ let computerNumber = document.getElementById('computer-number');
 const button = document.querySelector('.btn')
 
 button.addEventListener ('click', function(){
+
     playerNumber.innerHTML = Math.floor(Math.random() * 6 + 1);
-    computerNumber.innerHTML = Math.floor(Math.random() * 6 + 1); 
+    computerNumber.innerHTML = Math.floor(Math.random() * 6 + 1);
+
+    console.log(playerNumber);
+    console.log(computerNumber);
+
+    let esitoPlayer = document.getElementById('esito-player');
+    let esitoComputer = document.getElementById('esito-computer');
+
+    if ( playerNumber > computerNumber ){
+        esitoPlayer.innerHTML = 'Hai vinto!';
+        esitoComputer.innerHTML = 'Hai perso!';
+    } else if ( playerNumber < computerNumber ) {
+        esitoComputer.innerHTML = 'Hai vinto!';
+        esitoPlayer.innerHTML = 'Hai perso!';
+    } else {
+        esitoComputer.innerHTML = 'Pareggio!';
+        esitoPlayer.innerHTML = 'Pareggio!';
+    }
 })
 
