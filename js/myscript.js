@@ -19,18 +19,17 @@ torniamo a scrivere in italiano
 proviamo ad immaginare le operazioni che vogliamo far svolgere al nostro programma così come lo faremmo "a mano"
 */
 
-let playerNumber = document.getElementById('player-number');
-let computerNumber = document.getElementById('computer-number');
+let playerNumberElement = document.getElementById('player-number');
+let computerNumberElement = document.getElementById('computer-number');
 
 const button = document.querySelector('.btn')
 
 button.addEventListener ('click', function(){
 
-    playerNumber.innerHTML = Math.floor(Math.random() * 6 + 1);
-    computerNumber.innerHTML = Math.floor(Math.random() * 6 + 1);
-
-    console.log(playerNumber);
-    console.log(computerNumber);
+    playerNumber = Math.floor(Math.random() * 6 + 1);
+    computerNumber = Math.floor(Math.random() * 6 + 1);
+    playerNumberElement.innerHTML = playerNumber;
+    computerNumberElement.innerHTML = computerNumber;
 
     let esitoPlayer = document.getElementById('esito-player');
     let esitoComputer = document.getElementById('esito-computer');
@@ -46,4 +45,6 @@ button.addEventListener ('click', function(){
         esitoPlayer.innerHTML = 'Pareggio!';
     }
 })
+
+
 
