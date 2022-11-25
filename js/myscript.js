@@ -55,8 +55,29 @@ Se dobbiamo confrontare qualcosa che "cosa" ci serve?
 
 */
 
-let lista = ['pippo', 'pluto', 'topolino']
+const lista = ['ciao@gmail.com', 'pippo@hotmail.it', 'pluto@live.com'];
+
+const submit = document.getElementById('submit');
+const userEmail = document.getElementById('user-email');
+
+submit.addEventListener('click', function(){
+
+    let presente = false;
+
+    for (let i=0; i < lista.length; i++ ){
+        
+        if (userEmail.value == lista[i]){
+            presente = true;
+        }
+            
+    }
+
+if (presente){
+    console.log('puoi accedere');
+} else{
+    console.log('registrati');
+}
+
+})
 
 
-
-console.log(lista[2])
